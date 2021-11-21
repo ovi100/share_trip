@@ -1,0 +1,127 @@
+$transition-default: 0.25s ease-out 0.10s;
+
+.navbar-light {
+  .navbar-nav {
+    .nav-link {
+      color: #000000 !important;
+      font-size: 14px;
+      text-transform: capitalize;
+
+      &:hover {
+        color: #1882ff !important;
+      }
+    }
+    .active {
+      color: #1882ff !important;
+    }
+  }
+}
+
+.spin-wheel {
+  cursor: pointer;
+  font-size: 14px;
+  text-transform: capitalize;
+  img {
+    margin-right: 5px;
+  }
+}
+
+// Custom Switch
+
+.button-switch {
+  position: relative;
+  height: 48px;
+  width: 90px;
+  font-size: 15px;
+  margin-left: 25px;
+
+  .lbl-off,
+  .lbl-on {
+    cursor: pointer;
+    display: block;
+    font-size: 0.9em;
+    font-weight: bold;
+    line-height: 1em;
+    position: absolute;
+    top: 12px;
+    transition: opacity $transition-default;
+    text-transform: uppercase;
+  }
+
+  .lbl-off {
+    right: 10px;
+  }
+
+  .lbl-on {
+    color: #fff;
+    opacity: 0;
+    left: 6px;
+  }
+
+  .switch {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    height: 0;
+    width: 0;
+    font-size: 14px;
+    line-height: 0;
+    outline: none;
+    position: absolute;
+    
+
+    &:before,
+    &:after {
+      content: '';
+      font-size: 1em;
+      position: absolute;
+    }
+
+    &:before {
+      border-radius: 32px;
+      background: #1882FF;
+      height: 48px;
+      width: 90px;
+      left: 0;
+      top: 0;
+      transition: background-color $transition-default;
+    }
+
+    &:after {
+      top: 3px;
+      left: 3px;
+      height: 42px;
+      width: 42px;
+      background: #3062D0;
+      border-radius: 50%;      
+      transform: translate(0, 0);
+      transition: transform $transition-default;
+      
+    }
+
+    &:checked {
+      &:before {
+        background: #ccc;
+      }
+
+      &:after {
+        transform: translate(42px, 0);
+      }
+
+      & ~ .lbl-off {
+        opacity: 0;
+      }
+
+      & ~ .lbl-on {
+        opacity: 1;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .spin-wheel,
+  .button-switch{
+    display: none !important;
+  }
+}
