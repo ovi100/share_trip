@@ -10,9 +10,6 @@ function App() {
       <Routes>
         {/* <Route path="/" element={<Home />} /> */}
         <Route path="/" element={<Bus />} />
-        {/* <Route exact path="/">
-          <Navigate to="/home" replace state={Bus} />;
-        </Route> */}
       </Routes>
     </>
   );

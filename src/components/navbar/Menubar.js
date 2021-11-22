@@ -66,7 +66,7 @@ const Menubar = () => {
 
   useEffect(() => {
     if (location.pathname === "/") {
-      setActiveLink("home");
+      setActiveLink("bus");
     }
     else if (location.pathname === "/bus") {
       setActiveLink("bus");
